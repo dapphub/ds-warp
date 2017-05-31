@@ -1,6 +1,6 @@
 name            ds-warp
-description     A newly-created dapp
-version         0.0.0
+description     Time travel for the masses
+version         0.0.1
 
-author          rain
+author          dapphub
 license         Apache-2.0
