@@ -25,7 +25,7 @@ contract DSWarp is DSNote {
     }
 
     function warp(uint64 age) note {
-        assert(_era != 0);
+        require(_era != 0);
         _era = age == 0 ? 0 : _era + age;
     }
 }
