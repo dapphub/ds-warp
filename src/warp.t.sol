@@ -23,22 +23,22 @@ import "./warp.sol";
 contract DSWarpTest is DSTest {
     DSWarp warp;
 
-    function setUp() {
+    function setUp() public {
         warp = new DSWarp();
     }
-    function testInit() {
+    function testInit() public {
         assertEq(warp.era(), now);
     }
-    function testWarp() {
+    function testWarp() public {
         var tic = now;
         warp.warp(1);
         assertEq(warp.era(), tic + 1);
     }
-    function testWarpLock() {
+    function testWarpLock() public {
         warp.warp(0);
         assertEq(warp.era(), now);
     }
-    function testFailAfterWarpLock() {
+    function testFailAfterWarpLock() public {
         warp.warp(0);
         warp.warp(1);
     }

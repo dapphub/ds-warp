@@ -22,15 +22,15 @@ import "ds-note/note.sol";
 contract DSWarp is DSNote {
     uint64  _era;
 
-    function DSWarp() {
+    function DSWarp() public {
         _era = uint64(now);
     }
 
-    function era() constant returns (uint64) {
+    function era() public view returns (uint64) {
         return _era == 0 ? uint64(now) : _era;
     }
 
-    function warp(uint64 age) note {
+    function warp(uint64 age) note public {
         require(_era != 0);
         _era = age == 0 ? 0 : _era + age;
     }
