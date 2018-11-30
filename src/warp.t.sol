@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.4.13;
+pragma solidity >0.4.23;
 
 import "ds-test/test.sol";
 import "./warp.sol";
@@ -30,7 +30,7 @@ contract DSWarpTest is DSTest {
         assertEq(warp.era(), now);
     }
     function testWarp() public {
-        var tic = now;
+        uint tic = now;
         warp.warp(1);
         assertEq(warp.era(), tic + 1);
     }
